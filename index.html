@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Paskhalis Wahyu Adisatria | IT Staff | Web Development</title>
+    <title>Paskhalis Wahyu Adisatria | IT Staff & Web Developer</title>
 
     <meta name="description"
-          content="ATS Online Resume of Paskhalis Wahyu Adisatria - IT Staff, Web Development, IT Support and System Development.">
+          content="Paskhalis Wahyu Adisatria - IT Staff, Web Development, IT Support and System Development.">
 
     <meta name="author" content="Paskhalis Wahyu Adisatria">
 
     <style>
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --blue: #2563eb;
+            --blue-light: #eff6ff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -22,172 +34,447 @@
 
         body {
             margin: 0;
-            background: #f4f6f8;
-            color: #202124;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+            line-height: 1.65;
         }
 
-        .container {
-            max-width: 900px;
+        a {
+            color: inherit;
+        }
+
+        .page {
+            max-width: 1080px;
             margin: 40px auto;
-            background: #ffffff;
-            padding: 55px 65px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 0 20px;
         }
 
-        header {
-            border-bottom: 2px solid #222;
-            padding-bottom: 25px;
-            margin-bottom: 30px;
+        .resume {
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            background: var(--white);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
         }
 
-        h1 {
-            margin: 0 0 5px;
-            font-size: 32px;
-            line-height: 1.2;
-            color: #111827;
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            background: var(--navy);
+            color: #ffffff;
+            padding: 42px 30px;
         }
 
-        .headline {
-            margin: 0 0 15px;
-            font-size: 17px;
-            font-weight: bold;
-            color: #374151;
-        }
-
-        .contact {
+        .profile-mark {
+            width: 68px;
+            height: 68px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px 18px;
-            font-size: 14px;
-            color: #4b5563;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
         }
 
-        .contact a {
-            color: #1d4ed8;
+        .sidebar h1 {
+            font-size: 24px;
+            line-height: 1.25;
+            margin: 0 0 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .sidebar .role {
+            color: #93c5fd;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .sidebar-section {
+            margin-top: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            margin-bottom: 13px;
+            font-size: 13px;
+            color: #cbd5e1;
+            word-break: break-word;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #ffffff;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .contact-item a {
+            color: #cbd5e1;
             text-decoration: none;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+        .contact-item a:hover {
+            color: #93c5fd;
         }
 
-        section {
-            margin-bottom: 30px;
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
         }
 
-        h2 {
-            margin: 0 0 14px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #d1d5db;
-            font-size: 18px;
-            color: #111827;
+        .skill {
+            padding: 6px 9px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            font-size: 11px;
+            color: #e2e8f0;
+        }
+
+        .sidebar-note {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .content {
+            padding: 48px 50px;
+        }
+
+        .top-intro {
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
-        h3 {
+        .top-intro h2 {
+            margin: 0;
+            font-size: 31px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            color: var(--navy);
+        }
+
+        .top-intro p {
+            margin: 12px 0 0;
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .section {
+            margin-bottom: 36px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .section-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--blue-light);
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-heading h2 {
             margin: 0;
             font-size: 17px;
-            color: #111827;
+            color: var(--navy);
+            letter-spacing: -0.2px;
         }
 
-        .job-title {
-            margin-top: 2px;
-            font-weight: bold;
-            color: #374151;
-        }
-
-        .date-location {
-            margin: 3px 0 12px;
+        .summary {
+            color: #475569;
             font-size: 14px;
-            color: #6b7280;
         }
 
-        .entry {
-            margin-bottom: 25px;
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            position: relative;
+            padding-left: 22px;
+            border-left: 2px solid #dbeafe;
         }
 
-        p {
-            margin: 0 0 12px;
+        .experience::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--blue);
+            border-radius: 50%;
+            border: 3px solid #dbeafe;
+        }
+
+        .experience-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .experience-header {
+            margin-bottom: 17px;
+        }
+
+        .company {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 0;
+        }
+
+        .position {
+            margin-top: 3px;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .meta {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .description {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 16px;
         }
 
         ul {
             margin: 8px 0 0;
-            padding-left: 22px;
+            padding-left: 20px;
         }
 
         li {
             margin-bottom: 8px;
+            font-size: 13.5px;
+            color: #475569;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        li strong {
+            color: #334155;
         }
 
-        .skill {
-            padding: 6px 10px;
-            background: #f3f4f6;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
+        .system-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-top: 18px;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .education-card h3 {
+            margin: 0;
+            color: var(--navy);
+            font-size: 17px;
+        }
+
+        .degree {
+            color: var(--blue);
             font-size: 14px;
+            font-weight: 700;
+            margin-top: 3px;
         }
 
-        .project-list {
+        .gpa {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: var(--blue-light);
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           ORGANIZATION
+        ========================= */
+
+        .organization-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .organization-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            background: #ffffff;
+        }
+
+        .organization-card h3 {
+            margin: 0;
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+        .organization-card .meta {
+            margin-bottom: 8px;
+        }
+
+        .organization-card ul {
             margin-top: 8px;
         }
 
-        .project-list li {
+        .organization-card li {
+            font-size: 12.5px;
             margin-bottom: 5px;
         }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         .footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #d1d5db;
+            border-top: 1px solid var(--border);
+            color: #94a3b8;
+            font-size: 11px;
             text-align: center;
-            font-size: 13px;
-            color: #6b7280;
         }
 
-        @media (max-width: 700px) {
-            body {
-                background: #ffffff;
-            }
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
-            .container {
+        @media (max-width: 850px) {
+
+            .page {
                 margin: 0;
-                padding: 30px 22px;
-                box-shadow: none;
+                padding: 0;
             }
 
-            h1 {
-                font-size: 27px;
+            .resume {
+                grid-template-columns: 1fr;
+                border-radius: 0;
             }
 
-            .contact {
-                flex-direction: column;
-                gap: 4px;
+            .sidebar {
+                padding: 35px 25px;
+            }
+
+            .content {
+                padding: 35px 25px;
+            }
+
+            .organization-grid {
+                grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 480px) {
+
+            .top-intro h2 {
+                font-size: 25px;
+            }
+
+            .company {
+                font-size: 18px;
+            }
+
+            .experience-card,
+            .education-card,
+            .organization-card {
+                padding: 16px;
+            }
+        }
+
+        /* =========================
+           PRINT
+        ========================= */
 
         @media print {
+
             body {
                 background: #ffffff;
             }
 
-            .container {
+            .page {
                 margin: 0;
-                padding: 30px;
-                box-shadow: none;
-                max-width: none;
+                padding: 0;
             }
 
-            a {
-                color: #000000 !important;
+            .resume {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .experience-card {
+                break-inside: avoid;
             }
         }
     </style>
@@ -195,268 +482,479 @@
 
 <body>
 
-<main class="container">
+<div class="page">
 
-    <!-- HEADER -->
-    <header>
-        <h1>PASKHALIS WAHYU ADISATRIA</h1>
+    <div class="resume">
 
-        <p class="headline">
-            IT Staff | Web Development | IT Support
-        </p>
+        <!-- =========================
+             SIDEBAR
+        ========================= -->
 
-        <div class="contact">
-            <span>Surabaya, Jawa Timur, Indonesia</span>
-            <span>082247378544</span>
-            <span>
-                <a href="mailto:wahyu.adisatriaa@gmail.com">
-                    wahyu.adisatriaa@gmail.com
-                </a>
-            </span>
-            <span>
-                <a href="https://www.linkedin.com/in/wahyu-adisatria-432413244/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-            </span>
-        </div>
-    </header>
+        <aside class="sidebar">
 
-
-    <!-- PROFESSIONAL SUMMARY -->
-    <section>
-        <h2>Professional Summary</h2>
-
-        <p>
-            IT professional with experience in IT support, system administration,
-            network management, hardware maintenance, and website-based software
-            development. Experienced in managing attendance systems and supporting
-            the development and management of company profile websites, job portals,
-            HRIS, psychometric testing systems, and payroll systems.
-        </p>
-
-        <p>
-            Able to work effectively in a team and communicate well while supporting
-            technology and business operations.
-        </p>
-    </section>
-
-
-    <!-- WORK EXPERIENCE -->
-    <section>
-        <h2>Work Experience</h2>
-
-        <div class="entry">
-
-            <h3>Suksesindo Group</h3>
-
-            <div class="job-title">
-                IT Staff
+            <div class="profile-mark">
+                PWA
             </div>
 
-            <div class="date-location">
-                Surabaya, Indonesia | August 2023 – Present
+            <h1>
+                Paskhalis<br>
+                Wahyu Adisatria
+            </h1>
+
+            <div class="role">
+                IT Staff · Web Development
             </div>
 
-            <p>
-                Suksesindo Group is a group of companies including a company
-                operating in the Manpower Outsourcing sector with business
-                activities in Recruitment, HR Management, and Training.
-            </p>
 
-            <ul>
-                <li>
-                    <strong>Attendance System Administration:</strong>
-                    Managed user accounts, branch settings, work shift schedules,
-                    and payslip configurations through the attendance system
-                    administration panel.
-                </li>
+            <div class="sidebar-section">
 
-                <li>
-                    <strong>IT Support and Hardware Maintenance:</strong>
-                    Handled software troubleshooting for Windows and Microsoft
-                    Office and performed physical maintenance for PCs, printers,
-                    and CCTV systems.
-                </li>
+                <div class="sidebar-title">
+                    Contact
+                </div>
 
-                <li>
-                    <strong>Network Management:</strong>
-                    Configured and maintained local network sharing and connectivity.
-                </li>
+                <div class="contact-item">
+                    <strong>Location</strong>
+                    Surabaya, Jawa Timur, Indonesia
+                </div>
 
-                <li>
-                    <strong>System Development:</strong>
-                    Supported the development and management of website-based
-                    systems for company and HR operations.
-                </li>
-            </ul>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+6282247378544">
+                        082247378544
+                    </a>
+                </div>
 
-            <p>
-                <strong>Systems:</strong>
-            </p>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:wahyu.adisatriaa@gmail.com">
+                        wahyu.adisatriaa@gmail.com
+                    </a>
+                </div>
 
-            <ul class="project-list">
-                <li>Company Profile Website</li>
-                <li>Job Portal</li>
-                <li>Human Resources Information System (HRIS)</li>
-                <li>Psychometric Testing System</li>
-                <li>Payroll System</li>
-            </ul>
+                <div class="contact-item">
+                    <strong>LinkedIn</strong>
+                    <a
+                        href="https://www.linkedin.com/in/wahyu-adisatria-432413244/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        linkedin.com/in/wahyu-adisatria-432413244
+                    </a>
+                </div>
 
-            <ul>
-                <li>
-                    <strong>HRIS:</strong>
-                    Managed recruitment information, employee database records,
-                    and salary recipient records.
-                </li>
-
-                <li>
-                    <strong>Payroll:</strong>
-                    Supported a platform used for salary processing.
-                </li>
-            </ul>
-
-        </div>
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section>
-        <h2>Education</h2>
-
-        <div class="entry">
-
-            <h3>Universitas Surabaya</h3>
-
-            <div class="job-title">
-                Bachelor of Computer
             </div>
 
-            <div class="date-location">
-                Surabaya, Indonesia | August 2017 – October 2022
+
+            <div class="sidebar-section">
+
+                <div class="sidebar-title">
+                    Core Skills
+                </div>
+
+                <div class="skill-list">
+
+                    <span class="skill">IT Support</span>
+                    <span class="skill">Web Development</span>
+                    <span class="skill">System Development</span>
+                    <span class="skill">HRIS</span>
+                    <span class="skill">Payroll</span>
+                    <span class="skill">Job Portal</span>
+                    <span class="skill">Attendance System</span>
+                    <span class="skill">Network Management</span>
+                    <span class="skill">Windows</span>
+                    <span class="skill">Microsoft Office</span>
+                    <span class="skill">Hardware Maintenance</span>
+                    <span class="skill">PC Maintenance</span>
+                    <span class="skill">Printer Maintenance</span>
+                    <span class="skill">CCTV Maintenance</span>
+
+                </div>
+
             </div>
 
-            <p>
-                GPA: <strong>3.23 / 4.00</strong>
-            </p>
 
-        </div>
-    </section>
+            <div class="sidebar-section">
 
+                <div class="sidebar-title">
+                    Strengths
+                </div>
 
-    <!-- ORGANIZATIONAL EXPERIENCE -->
-    <section>
-        <h2>Organizational Experience</h2>
+                <div class="contact-item">
+                    Teamwork & Collaboration
+                </div>
 
-        <div class="entry">
+                <div class="contact-item">
+                    Communication
+                </div>
 
-            <h3>KMM SPORTS</h3>
+                <div class="contact-item">
+                    IT Operations Support
+                </div>
 
-            <div class="date-location">
-                Surabaya, Indonesia | January 2018 – May 2021
+                <div class="contact-item">
+                    Business System Support
+                </div>
+
             </div>
 
-            <p>
-                Student talent and interest organization focused on sports activities.
-            </p>
 
-            <ul>
-                <li>Member of Futsal Division (2018 – 2019)</li>
-                <li>Head of Futsal Division (2018 – 2019)</li>
-                <li>Vice Head of Futsal Division (2019 – 2020)</li>
-            </ul>
-
-        </div>
-
-
-        <div class="entry">
-
-            <h3>Ormawa Cup</h3>
-
-            <div class="date-location">
-                Surabaya, Indonesia | January 2019 – January 2020
+            <div class="sidebar-note">
+                ATS-friendly online resume designed for professional recruitment and digital screening.
             </div>
 
-            <p>
-                Sports events for student organization in the Faculty of Engineering.
-            </p>
-
-            <ul>
-                <li>Head of Committee (January 2019)</li>
-                <li>Steering Committee (January 2020)</li>
-            </ul>
-
-        </div>
+        </aside>
 
 
-        <div class="entry">
+        <!-- =========================
+             MAIN CONTENT
+        ========================= -->
 
-            <h3>Student Orientation</h3>
+        <main class="content">
 
-            <div class="date-location">
-                Surabaya, Indonesia | August 2019
+
+            <!-- INTRO -->
+
+            <div class="top-intro">
+
+                <div class="eyebrow">
+                    Professional Resume
+                </div>
+
+                <h2>
+                    IT Staff & Web Development
+                </h2>
+
+                <p>
+                    IT professional with experience in IT support, system
+                    administration, network management, hardware maintenance,
+                    and website-based software development.
+                </p>
+
             </div>
 
-            <p>
-                Student Mentor for university student orientation.
-            </p>
 
-            <ul>
-                <li>Provided learning materials about university life.</li>
-                <li>Accompanied students during student orientation.</li>
-            </ul>
+            <!-- SUMMARY -->
 
-        </div>
+            <section class="section">
 
-    </section>
+                <div class="section-heading">
 
+                    <div class="section-number">
+                        01
+                    </div>
 
-    <!-- SKILLS -->
-    <section>
-        <h2>Skills</h2>
+                    <h2>
+                        Professional Summary
+                    </h2>
 
-        <div class="skills">
+                </div>
 
-            <span class="skill">IT Support</span>
-            <span class="skill">Web Development</span>
-            <span class="skill">Website Development</span>
-            <span class="skill">System Development</span>
-            <span class="skill">HRIS</span>
-            <span class="skill">Payroll System</span>
-            <span class="skill">Job Portal</span>
-            <span class="skill">Attendance System</span>
-            <span class="skill">Network Management</span>
-            <span class="skill">Network Configuration</span>
-            <span class="skill">Windows Troubleshooting</span>
-            <span class="skill">Microsoft Office</span>
-            <span class="skill">PC Maintenance</span>
-            <span class="skill">Printer Maintenance</span>
-            <span class="skill">CCTV Maintenance</span>
-            <span class="skill">Hardware Maintenance</span>
+                <div class="summary">
 
-        </div>
-    </section>
+                    <p>
+                        IT professional with experience in IT support, system
+                        administration, network management, hardware maintenance,
+                        and website-based software development. Experienced in
+                        managing attendance systems and supporting the development
+                        and management of company profile websites, job portals,
+                        HRIS, psychometric testing systems, and payroll systems.
+                    </p>
+
+                    <p>
+                        Able to work effectively in a team and communicate well
+                        while supporting technology and business operations.
+                    </p>
+
+                </div>
+
+            </section>
 
 
-    <!-- ADDITIONAL INFORMATION -->
-    <section>
-        <h2>Additional Information</h2>
+            <!-- EXPERIENCE -->
 
-        <ul>
-            <li>Teamwork and collaboration</li>
-            <li>Communication</li>
-            <li>IT operations support</li>
-            <li>Business system support</li>
-        </ul>
-    </section>
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <h2>
+                        Work Experience
+                    </h2>
+
+                </div>
 
 
-    <div class="footer">
-        Paskhalis Wahyu Adisatria · ATS Online Resume
+                <div class="experience">
+
+                    <article class="experience-card">
+
+                        <div class="experience-header">
+
+                            <h3 class="company">
+                                Suksesindo Group
+                            </h3>
+
+                            <div class="position">
+                                IT Staff
+                            </div>
+
+                            <div class="meta">
+                                Surabaya, Indonesia · August 2023 – Present
+                            </div>
+
+                        </div>
+
+
+                        <p class="description">
+                            Suksesindo Group is a group of companies including
+                            a company operating in the Manpower Outsourcing sector
+                            with business activities in Recruitment, HR Management,
+                            and Training.
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                <strong>Attendance System Administration:</strong>
+                                Managed user accounts, branch settings, work shift
+                                schedules, and payslip configurations through the
+                                attendance system administration panel.
+                            </li>
+
+                            <li>
+                                <strong>IT Support and Hardware Maintenance:</strong>
+                                Handled software troubleshooting for Windows and
+                                Microsoft Office and performed physical maintenance
+                                for PCs, printers, and CCTV systems.
+                            </li>
+
+                            <li>
+                                <strong>Network Management:</strong>
+                                Configured and maintained local network sharing
+                                and connectivity.
+                            </li>
+
+                            <li>
+                                <strong>System Development:</strong>
+                                Supported the development and management of
+                                website-based systems for company and HR operations.
+                            </li>
+
+                        </ul>
+
+
+                        <div class="system-title">
+                            Systems Developed / Managed
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Company Profile Website
+                            </li>
+
+                            <li>
+                                Job Portal
+                            </li>
+
+                            <li>
+                                Human Resources Information System (HRIS)
+                            </li>
+
+                            <li>
+                                Psychometric Testing System
+                            </li>
+
+                            <li>
+                                Payroll System
+                            </li>
+
+                        </ul>
+
+
+                        <ul>
+
+                            <li>
+                                <strong>HRIS:</strong>
+                                Managed recruitment information, employee database
+                                records, and salary recipient records.
+                            </li>
+
+                            <li>
+                                <strong>Payroll:</strong>
+                                Supported a platform used for salary processing.
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- EDUCATION -->
+
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <h2>
+                        Education
+                    </h2>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <h3>
+                        Universitas Surabaya
+                    </h3>
+
+                    <div class="degree">
+                        Bachelor of Computer
+                    </div>
+
+                    <div class="meta">
+                        Surabaya, Indonesia · August 2017 – October 2022
+                    </div>
+
+                    <div class="gpa">
+                        GPA 3.23 / 4.00
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ORGANIZATION -->
+
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        04
+                    </div>
+
+                    <h2>
+                        Organizational Experience
+                    </h2>
+
+                </div>
+
+
+                <div class="organization-grid">
+
+
+                    <article class="organization-card">
+
+                        <h3>
+                            KMM SPORTS
+                        </h3>
+
+                        <div class="meta">
+                            Surabaya · 2018 – 2021
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Member of Futsal Division (2018 – 2019)
+                            </li>
+
+                            <li>
+                                Head of Futsal Division (2018 – 2019)
+                            </li>
+
+                            <li>
+                                Vice Head of Futsal Division (2019 – 2020)
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="organization-card">
+
+                        <h3>
+                            Ormawa Cup
+                        </h3>
+
+                        <div class="meta">
+                            Surabaya · 2019 – 2020
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Head of Committee (January 2019)
+                            </li>
+
+                            <li>
+                                Steering Committee (January 2020)
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="organization-card">
+
+                        <h3>
+                            Student Orientation
+                        </h3>
+
+                        <div class="meta">
+                            Surabaya · August 2019
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Student Mentor
+                            </li>
+
+                            <li>
+                                Provided learning materials about university life.
+                            </li>
+
+                            <li>
+                                Accompanied students during student orientation.
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <div class="footer">
+                Paskhalis Wahyu Adisatria · ATS Online Resume
+            </div>
+
+
+        </main>
+
     </div>
 
-</main>
+</div>
 
 </body>
 </html>
